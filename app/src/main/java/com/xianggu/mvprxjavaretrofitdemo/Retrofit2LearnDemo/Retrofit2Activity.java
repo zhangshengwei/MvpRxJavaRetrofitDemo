@@ -13,6 +13,7 @@ import com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.api.Api;
 import com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.module.BaseData;
 import com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.module.BookBean;
 
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -68,10 +69,14 @@ public class Retrofit2Activity extends AppCompatActivity {
         Api api = mRetrofit.create(Api.class);
         //步骤6：对发送请求进行封装
         Call<BaseData<List<BookBean>>> jsonDataCall = api.getBookData();
-//        Call<Data<Info>> jsonDataCall = mRetrofit.create(Api.class).getJsonData("10006");
 
         //同步执行
-//         Response<Data<Info>> execute = jsonDataCall.execute();
+//        try {
+//            Response<BaseData<List<BookBean>>> data = jsonDataCall.execute();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
 
         //步骤7:发送网络请求(异步)
         jsonDataCall.enqueue(new Callback<BaseData<List<BookBean>>>() {
@@ -86,12 +91,10 @@ public class Retrofit2Activity extends AppCompatActivity {
                 if (data == null) {
                     return;
                 }
-
                 String resultStr = "";
                 for (int i = 0; i < data.getData().size(); i++) {
                     resultStr = resultStr + " 书名 : " + data.getData().get(i).getBook_title() + "\t 书ID : " + data.getData().get(i).getBook_id() + " \n";
                 }
-
                 resultTv.setText("dataString:"+resultStr);
             }
 
