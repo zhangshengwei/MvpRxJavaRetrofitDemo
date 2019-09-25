@@ -1,4 +1,4 @@
-package com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.utils;
+package com.xianggu.mvprxjavaretrofitdemo.retrofittemp.utils;
 
 
 import android.content.Context;

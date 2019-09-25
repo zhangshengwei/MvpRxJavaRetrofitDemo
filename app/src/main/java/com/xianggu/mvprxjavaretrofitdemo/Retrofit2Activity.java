@@ -1,4 +1,4 @@
-package com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo;
+package com.xianggu.mvprxjavaretrofitdemo;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,12 +8,11 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.xianggu.mvprxjavaretrofitdemo.R;
-import com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.api.Api;
-import com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.module.BaseData;
-import com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.module.BookBean;
+import com.xianggu.mvprxjavaretrofitdemo.MainActivity;import com.xianggu.mvprxjavaretrofitdemo.R;
+import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.api.Api;
+import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.module.BaseData;
+import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.module.BookBean;
 
-import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -49,7 +48,7 @@ public class Retrofit2Activity extends AppCompatActivity {
         ////步骤4:构建Retrofit实例
         mRetrofit = new Retrofit.Builder()
                 //设置网络请求BaseUrl地址
-                .baseUrl("http://porth5.haokanread.com/")
+                .baseUrl(Api.BaseURL)
                 //设置数据解析器
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -70,12 +69,6 @@ public class Retrofit2Activity extends AppCompatActivity {
         //步骤6：对发送请求进行封装
         Call<BaseData<List<BookBean>>> jsonDataCall = api.getBookData();
 
-        //同步执行
-//        try {
-//            Response<BaseData<List<BookBean>>> data = jsonDataCall.execute();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
 
         //步骤7:发送网络请求(异步)
@@ -95,7 +88,11 @@ public class Retrofit2Activity extends AppCompatActivity {
                 for (int i = 0; i < data.getData().size(); i++) {
                     resultStr = resultStr + " 书名 : " + data.getData().get(i).getBook_title() + "\t 书ID : " + data.getData().get(i).getBook_id() + " \n";
                 }
-                resultTv.setText("dataString:"+resultStr);
+
+                String extraStr = " 总数:" +  data.getExtra().getCount() + "\n  页数:" + data.getExtra().getPage() +
+                        "\n  一页的数量:" + data.getExtra().getLimit() ;
+
+                resultTv.setText("dataString:"+resultStr + "\n  补充内容" + extraStr);
             }
 
             @Override

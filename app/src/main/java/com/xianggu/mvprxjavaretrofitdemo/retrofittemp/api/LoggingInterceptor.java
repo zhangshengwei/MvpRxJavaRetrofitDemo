@@ -1,4 +1,4 @@
-package com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.api;
+package com.xianggu.mvprxjavaretrofitdemo.retrofittemp.api;
 
 import android.util.Log;
 

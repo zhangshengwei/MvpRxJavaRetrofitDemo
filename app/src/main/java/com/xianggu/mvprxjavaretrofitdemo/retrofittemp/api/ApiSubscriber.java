@@ -1,4 +1,4 @@
-package com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.api;
+package com.xianggu.mvprxjavaretrofitdemo.retrofittemp.api;
 
 import io.reactivex.subscribers.ResourceSubscriber;
 

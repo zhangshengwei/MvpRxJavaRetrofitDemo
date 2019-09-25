@@ -1,4 +1,4 @@
-package com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.module;
+package com.xianggu.mvprxjavaretrofitdemo.retrofittemp.module;
 
 /**
  * @Description:

@@ -6,10 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.Retrofit2Activity;
-import com.xianggu.mvprxjavaretrofitdemo.mvplearnDemo.MvpViewActivity;
-import com.xianggu.mvprxjavaretrofitdemo.rxjavalearnDemo.RxJavaActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     private TextView rxJavaTv, retrofit2Tv,toMvpTv;

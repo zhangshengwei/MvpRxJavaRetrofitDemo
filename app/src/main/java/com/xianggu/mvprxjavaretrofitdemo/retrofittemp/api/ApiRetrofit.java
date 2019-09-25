@@ -1,8 +1,8 @@
-package com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.api;
+package com.xianggu.mvprxjavaretrofitdemo.retrofittemp.api;
 
 
 import com.xianggu.mvprxjavaretrofitdemo.MyApplication;
-import com.xianggu.mvprxjavaretrofitdemo.Retrofit2LearnDemo.utils.NetUtils;
+import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.utils.NetUtils;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -26,7 +26,7 @@ public class ApiRetrofit {
 
     public Api wApi;
 
-    public static final String T_BASE_URL = "http://api.m.mtime.cn";
+    public static final String BASEURL = "http://api.m.mtime.cn";
 
     public Api getwApi() {
         return wApi;
@@ -45,10 +45,11 @@ public class ApiRetrofit {
                 .build();
 
         Retrofit retrofit_t = new Retrofit.Builder()
-                .baseUrl(T_BASE_URL)
+                .baseUrl(BASEURL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//不能是RxJavaCallAdapterFactory，因为我们这里用的rxjava2
+                //不能是RxJavaCallAdapterFactory，因为我们这里用的rxjava2
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
 
 

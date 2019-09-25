@@ -1,4 +1,4 @@
-package com.xianggu.mvprxjavaretrofitdemo.rxjavalearnDemo;
+package com.xianggu.mvprxjavaretrofitdemo;
 
 import android.os.Bundle;
 import android.util.Log;
