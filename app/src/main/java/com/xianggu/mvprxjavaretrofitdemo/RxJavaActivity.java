@@ -59,7 +59,6 @@ public class RxJavaActivity extends AppCompatActivity {
 
                 //onComplete 可以重复调用,但观察者只会接收一次
                 emitter.onComplete();
-
                 //onError 只能调用一次,需要传递错误信息
 
             }

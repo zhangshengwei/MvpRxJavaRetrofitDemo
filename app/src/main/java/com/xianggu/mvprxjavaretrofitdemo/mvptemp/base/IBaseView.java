@@ -1,4 +1,4 @@
-package com.xianggu.mvprxjavaretrofitdemo.mvptemp.view;
+package com.xianggu.mvprxjavaretrofitdemo.mvptemp.base;
 
 /**
  * @Description: 所有View的基类，什么也不做，只是提供一个类型
