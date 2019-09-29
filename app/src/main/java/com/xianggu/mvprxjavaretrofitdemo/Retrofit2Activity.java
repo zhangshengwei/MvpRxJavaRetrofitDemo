@@ -8,7 +8,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.xianggu.mvprxjavaretrofitdemo.MainActivity;import com.xianggu.mvprxjavaretrofitdemo.R;
 import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.api.Api;
 import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.module.BaseData;
 import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.module.BookBean;
@@ -68,8 +67,6 @@ public class Retrofit2Activity extends AppCompatActivity {
         Api api = mRetrofit.create(Api.class);
         //步骤6：对发送请求进行封装
         Call<BaseData<List<BookBean>>> jsonDataCall = api.getBookData();
-
-
 
         //步骤7:发送网络请求(异步)
         jsonDataCall.enqueue(new Callback<BaseData<List<BookBean>>>() {

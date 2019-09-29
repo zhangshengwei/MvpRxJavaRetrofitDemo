@@ -5,6 +5,7 @@ import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.module.BookBean;
 
 import java.util.List;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.POST;
 
@@ -159,4 +160,8 @@ public interface Api {
     //http://porth5.haokanread.com/index/searchHot/page/1/limit/6
     @POST("index/searchHot/page/1/limit/6")
     Call<BaseData<List<BookBean>>> getBookData();
+
+//    @FormUrlEncoded
+    @POST("index/searchHot/page/1/limit/6")
+    Observable<BaseData<List<BookBean>>> getMvpBookData();
 }

@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class MvpViewActivity extends BaseMvpActivity<PresenterMvp> implements MvpContract.MvpView {
 
-    private static final String TAG = "MvpViewActivity";
+    private static final String TAG = "MvpViewActivity--->>";
 
     private TextView requestNetTv,resultTv;
 
@@ -59,7 +59,8 @@ public class MvpViewActivity extends BaseMvpActivity<PresenterMvp> implements Mv
             dataResult = dataResult + " 书名 : " + bookBeanList.get(i).getBook_title() + "\t 书ID : " + bookBeanList.get(i).getBook_id() + " \n";
         }
         Log.d(TAG,  onLoadSuccess + " dataContent: " +dataResult);
-        Toast.makeText(MvpViewActivity.this, onLoadSuccess, Toast.LENGTH_LONG).show();
+        resultTv.setText(dataResult);
+//        Toast.makeText(MvpViewActivity.this, onLoadSuccess, Toast.LENGTH_LONG).show();
     }
 
     @Override

@@ -6,10 +6,11 @@ import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.module.BookBean;
 
 import java.util.List;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 
 /**
- * @Description: MVPActivity的接口管理
+ * @Description: MVPActivity的接口管理，可以减少大量的接口类
  * @Author: xianggu
  * @CreateDate: 2019-09-26 10:30
  */
@@ -22,7 +23,7 @@ public interface MvpContract {
         /**
          * 接口请求数据
          */
-        Call<BaseData<List<BookBean>>> getBookData();
+        Observable<BaseData<List<BookBean>>> getMvpBookList();
     }
 
     /**
