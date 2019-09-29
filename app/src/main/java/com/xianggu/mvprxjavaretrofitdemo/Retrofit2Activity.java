@@ -30,7 +30,7 @@ public class Retrofit2Activity extends AppCompatActivity {
 
     private static final String TAG = "Retrofit2Activity-->>";
 
-    private TextView requestNetTv,resultTv;
+    private TextView requestNetTv, resultTv;
 
     private Retrofit mRetrofit;
 
@@ -86,10 +86,10 @@ public class Retrofit2Activity extends AppCompatActivity {
                     resultStr = resultStr + " 书名 : " + data.getData().get(i).getBook_title() + "\t 书ID : " + data.getData().get(i).getBook_id() + " \n";
                 }
 
-                String extraStr = " 总数:" +  data.getExtra().getCount() + "\n  页数:" + data.getExtra().getPage() +
-                        "\n  一页的数量:" + data.getExtra().getLimit() ;
+                String extraStr = " 总数:" + data.getExtra().getCount() + "\n  页数:" + data.getExtra().getPage() +
+                        "\n  一页的数量:" + data.getExtra().getLimit();
 
-                resultTv.setText("dataString:"+resultStr + "\n  补充内容" + extraStr);
+                resultTv.setText("dataString:" + resultStr + "\n  补充内容" + extraStr);
             }
 
             @Override

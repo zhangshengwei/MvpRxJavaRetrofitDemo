@@ -16,7 +16,6 @@ public class BaseData<T> {
      */
 
     private ExtraBean extra;
-//    private T extra;
 
     public int getCode() {
         return code;

@@ -33,9 +33,9 @@ public class HttpMethods {
      */
     private volatile static HttpMethods instance;
 
-    public static HttpMethods getInstance(){
-        if (instance == null){
-            synchronized (HttpMethods.class){
+    public static HttpMethods getInstance() {
+        if (instance == null) {
+            synchronized (HttpMethods.class) {
                 instance = new HttpMethods();
             }
         }
@@ -43,7 +43,7 @@ public class HttpMethods {
     }
 
 
-    private HttpMethods(){
+    private HttpMethods() {
         //手动创建一个OkHttpClient并设置超时时间
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
@@ -60,7 +60,7 @@ public class HttpMethods {
         apiData = mRetrofit.create(Api.class);
     }
 
-    public Api getApi(){
+    public Api getApi() {
         return apiData;
     }
 }

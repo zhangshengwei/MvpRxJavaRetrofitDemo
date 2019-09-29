@@ -17,6 +17,7 @@ public class NetUtils {
 
     /**
      * 检查是否有网络
+     *
      * @param context
      * @return
      */
@@ -24,8 +25,7 @@ public class NetUtils {
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (manager.getActiveNetworkInfo() != null) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -122,6 +122,7 @@ public class NetUtils {
 
     /**
      * 判断输入的链接是否有效
+     *
      * @param strLink
      * @return
      */
@@ -129,7 +130,7 @@ public class NetUtils {
         URL url;
         try {
             url = new URL(strLink);
-            HttpURLConnection connt = (HttpURLConnection)url.openConnection();
+            HttpURLConnection connt = (HttpURLConnection) url.openConnection();
             connt.setRequestMethod("HEAD");
             String strMessage = connt.getResponseMessage();
             if (strMessage.compareTo("Not Found") == 0) {

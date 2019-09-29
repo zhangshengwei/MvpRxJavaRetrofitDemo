@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView rxJavaTv, retrofit2Tv,toMvpTv;
+    private TextView rxJavaTv, retrofit2Tv, toMvpTv;
 
 
     @Override

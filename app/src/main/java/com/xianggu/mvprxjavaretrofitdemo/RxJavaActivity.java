@@ -25,10 +25,11 @@ public class RxJavaActivity extends AppCompatActivity {
     private Disposable simpleRxjavaDisposable;
     private Disposable asynChainedRxjavaDisposable;
     private Disposable complexRxjavaDisposable;
-    private String[] testData = new String[]{"测试图片 1","测试图片 2","测试图片 3","测试图片 4","测试图片 5","测试图片 6","测试图片 7","测试图片 8","测试图片 9","测试图片 10"};
+    private String[] testData = new String[]{"测试图片 1", "测试图片 2", "测试图片 3", "测试图片 4", "测试图片 5", "测试图片 6", "测试图片 7", "测试图片 8", "测试图片 9", "测试图片 10"};
 
 
     private TextView androidID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,19 +159,19 @@ public class RxJavaActivity extends AppCompatActivity {
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                for (int i=0;i<testData.length;i++){
-                    Log.d(TAG, "subscribe: content:"+testData[i]);
+                for (int i = 0; i < testData.length; i++) {
+                    Log.d(TAG, "subscribe: content:" + testData[i]);
                     //第6个图片延时3秒后架子
-                    if (i==5){
+                    if (i == 5) {
                         sleep(3000);
                         Log.d(TAG, "subscribe: 第五章睡眠3秒");
                     }
                     //复制第7张图片到sd卡
-                    if (i==6){
+                    if (i == 6) {
                         Log.d(TAG, "subscribe: 第六章保存到SD卡中");
                     }
                     //上传到网络
-                    if (i==7){
+                    if (i == 7) {
                         Log.d(TAG, "subscribe: 第七张上传到网络");
                     }
                     emitter.onNext(testData[i]);
@@ -186,12 +187,10 @@ public class RxJavaActivity extends AppCompatActivity {
                     @Override
                     public void accept(String string) throws Exception {
                         //回调后在UI界面上展示出来
-                        Log.d(TAG, "accept: string:"+string);
-                    }});
+                        Log.d(TAG, "accept: string:" + string);
+                    }
+                });
     }
-
-
-
 
 
     @Override

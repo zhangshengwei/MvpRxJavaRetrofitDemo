@@ -161,7 +161,7 @@ public interface Api {
     @POST("index/searchHot/page/1/limit/6")
     Call<BaseData<List<BookBean>>> getBookData();
 
-//    @FormUrlEncoded
+    //    @FormUrlEncoded
     @POST("index/searchHot/page/1/limit/6")
     Observable<BaseData<List<BookBean>>> getMvpBookData();
 }

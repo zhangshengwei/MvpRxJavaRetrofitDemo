@@ -35,12 +35,14 @@ public class ApiRetrofit {
     ApiRetrofit() {
         //cache url
         File httpCacheDirectory = new File(MyApplication.getContext().getCacheDir(), "responses");
-        int cacheSize = 10 * 1024 * 1024; // 10 MiB
+        // 10 MiB
+        int cacheSize = 10 * 1024 * 1024;
         Cache cache = new Cache(httpCacheDirectory, cacheSize);
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
-                .addInterceptor(new LoggingInterceptor())      //日志拦截器
+                //日志拦截器
+                .addInterceptor(new LoggingInterceptor())
                 .cache(cache)
                 .build();
 

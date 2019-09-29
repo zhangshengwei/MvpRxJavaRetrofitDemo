@@ -36,7 +36,7 @@ public class RxHelper {
                         .doOnNext(new Consumer<BaseData<T>>() {
                             @Override
                             public void accept(BaseData<T> result) throws Exception {
-                                if (Config.NetWorkResponseCode.RESPONSE_BQG_CODE_SUCCESS.equals(result.getCode()+"")
+                                if (Config.NetWorkResponseCode.RESPONSE_BQG_CODE_SUCCESS.equals(result.getCode() + "")
                                         && isAutoToastMsg(result, showMessage)) {
                                     Log.d(TAG, "RxJavaHelper  accept: " + result.getMsg());
                                 }
@@ -46,7 +46,7 @@ public class RxHelper {
                         .flatMap(new Function<BaseData<T>, ObservableSource<T>>() {
                             @Override
                             public ObservableSource<T> apply(BaseData<T> result) throws Exception {
-                                if (Config.NetWorkResponseCode.RESPONSE_BQG_CODE_SUCCESS.equals(result.getCode()+"")) {
+                                if (Config.NetWorkResponseCode.RESPONSE_BQG_CODE_SUCCESS.equals(result.getCode() + "")) {
                                     T data = result.getData();
                                     if (data == null && defaultEmptyDataClass != null) {
                                         data = defaultEmptyDataClass.newInstance();

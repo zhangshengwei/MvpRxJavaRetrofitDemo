@@ -24,7 +24,7 @@ public class MvpViewActivity extends BaseMvpActivity<PresenterMvp> implements Mv
 
     private static final String TAG = "MvpViewActivity--->>";
 
-    private TextView requestNetTv,resultTv;
+    private TextView requestNetTv, resultTv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,8 @@ public class MvpViewActivity extends BaseMvpActivity<PresenterMvp> implements Mv
     @Override
     public void onLoading() {
         String onLoading = "Data Loading...";
-        Log.d(TAG,  onLoading);
-        Toast.makeText(MvpViewActivity.this,onLoading, Toast.LENGTH_LONG).show();
+        Log.d(TAG, onLoading);
+        Toast.makeText(MvpViewActivity.this, onLoading, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -58,7 +58,7 @@ public class MvpViewActivity extends BaseMvpActivity<PresenterMvp> implements Mv
         for (int i = 0; i < bookBeanList.size(); i++) {
             dataResult = dataResult + " 书名 : " + bookBeanList.get(i).getBook_title() + "\t 书ID : " + bookBeanList.get(i).getBook_id() + " \n";
         }
-        Log.d(TAG,  onLoadSuccess + " dataContent: " +dataResult);
+        Log.d(TAG, onLoadSuccess + " dataContent: " + dataResult);
         resultTv.setText(dataResult);
 //        Toast.makeText(MvpViewActivity.this, onLoadSuccess, Toast.LENGTH_LONG).show();
     }
@@ -67,26 +67,26 @@ public class MvpViewActivity extends BaseMvpActivity<PresenterMvp> implements Mv
     public void onLoadFailed(String error) {
         String onLoadFailed = "Loading Failed..." + error;
         Log.d(TAG, onLoadFailed);
-        Toast.makeText(MvpViewActivity.this,onLoadFailed, Toast.LENGTH_LONG).show();
+        Toast.makeText(MvpViewActivity.this, onLoadFailed, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void showLoadingView() {
         String showLoadingView = "Loading View...";
         Log.d(TAG, showLoadingView);
-        Toast.makeText(MvpViewActivity.this,"Loading View...", Toast.LENGTH_LONG).show();
+        Toast.makeText(MvpViewActivity.this, "Loading View...", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void dismissLoadingView() {
         String dismissLoadingView = "Loading Dismissed...";
         Log.d(TAG, dismissLoadingView);
-        Toast.makeText(MvpViewActivity.this,dismissLoadingView, Toast.LENGTH_LONG).show();
+        Toast.makeText(MvpViewActivity.this, dismissLoadingView, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void showMessage(String message) {
-        Toast.makeText(MvpViewActivity.this,"界面加载失败" + message, Toast.LENGTH_LONG).show();
+        Toast.makeText(MvpViewActivity.this, "界面加载失败" + message, Toast.LENGTH_LONG).show();
         finish();
     }
 }

@@ -8,6 +8,7 @@ import com.xianggu.mvprxjavaretrofitdemo.retrofittemp.module.BookBean;
 import java.util.List;
 
 import io.reactivex.Observable;
+
 /**
  * @Description: 负责提供数据
  * @Author: xianggu
