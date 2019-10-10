@@ -40,7 +40,6 @@ public class MvpViewActivity extends BaseMvpActivity<PresenterMvp> implements Mv
         requestNetTv.setOnClickListener(v -> {
             mPresenter.bookDataShow();
         });
-
     }
 
     @Override
